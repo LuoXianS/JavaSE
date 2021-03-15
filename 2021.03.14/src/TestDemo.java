@@ -74,7 +74,7 @@ public class TestDemo {
     }
     public static void main6(String[] args) {
         int[] arr = {3,4,5,6,7,8};
-        System.out.println(Arrays.toString(func(arr,20)));
+        System.out.println(Arrays.toString(func(arr,10)));
     }
     //二倍输出数组,且不修改原来的数组
     public static int[] func(int [] arr){
