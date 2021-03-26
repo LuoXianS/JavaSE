@@ -132,11 +132,11 @@ public class MyLinkedList {
             return;
         }
         if(index == 0 ){
-            this.addFirst(data);
+            this.addFirst(data);//头插法
             return;
         }
         if (index == Size()){
-            this.addLast(data);
+            this.addLast(data);//尾插法
             return;
         }else{
             Node cur = findIndex(index);
@@ -154,17 +154,94 @@ public class MyLinkedList {
             cur.next = node;*/
         }
     }
+    //找到前驱节点
+    public Node findPrev(int key){
+        Node cur = this.head;
+        while(cur.next != null){
+            if (cur.next.val == key){
+                return cur;
+            }else{
+                cur = cur.next;
+            }
+        }
+        return null;
+    }
     //删除第一次出现关键字为key的节点
     public void remove(int key) {
-
-
+        if (this.head == null) {
+            System.out.println("链表为空");//链表为空
+            return;
+        }
+        if (this.head.val == key) {
+            this.head = this.head.next;//链表为1
+            return;
+        }//正常删除
+        Node cur = findPrev(key);
+        if (cur == null) {
+            System.out.println("不存在key值");
+        } else {
+            //Node ret = cur.next;
+            cur.next = cur.next.next;
+        }
     }
     //删除所有值为key的节点
     public void removeAllKey(int key){
-
+        if (this.head == null){
+            System.out.println("空链表");
+            return;
+        }
+        Node cur = this.head.next;
+        Node prev = this.head;
+        while(cur != null){
+            if (cur.val ==key){
+                prev.next = cur.next;
+            }else{
+                prev  = cur;
+            }
+            cur = cur.next;
+        }
+        if (this.head.val == key){
+            this.head = this.head.next;
+        }
     }
+    //反转链表
+    public Node reserveList(){
+        Node cur = this.head;
+        Node prev = null;//翻转的前驱节点
+        while(cur != null){
+            Node curNext = cur.next;//存放cur.next的值
+            if (cur.next == null){
+                this.head = cur;
+            }
+            cur.next = prev;
+            prev = cur;
+            cur = curNext;
+        }
+        return this.head;
+    }
+    //返回中间节点,如果为两个则返回第二个中间节点
+    public Node returnMid1(){
+        int ret = Size()/2;
+        Node cur =this.head;
+         int count = 0;
+         while(count != ret) {
+             cur = cur.next;
+             count++;
+         }
+         return cur;
+    }
+    public Node returnMid(){
+        Node fast = this.head;
+        Node slow = this.head;
+        while(fast != null && slow != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    //清空
     public void clear() {
-
+        this.head = null;
     }
     
 }
