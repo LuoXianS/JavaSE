@@ -336,6 +336,7 @@ public class MyLinkedList {
         this.head = newHead.next;
         tmp.next = null;
         return newHead.next;
+        
     }
 
 }
