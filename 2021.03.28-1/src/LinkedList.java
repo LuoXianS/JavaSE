@@ -78,5 +78,4 @@ public class LinkedList {
 
     }
     //旋转链表
-
 }
