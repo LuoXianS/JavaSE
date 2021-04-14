@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class UDPClient {
-    private static final String IP = "127.0.0.1";
+    private static final String IP = "82.156.51.110";
     private static final int Port = 9001;
     private static final int length = 1024;
     public static void main(String[] args) throws IOException {
