@@ -3,7 +3,6 @@ package udp;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.SocketException;
 
 public class UDPService {
     private static final int Port = 9001;

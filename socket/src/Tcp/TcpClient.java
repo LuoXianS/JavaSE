@@ -19,7 +19,7 @@ public class TcpClient {
                 System.out.println("->");
                 String msg = scanner.nextLine();
                 writer.write(msg+"\n");
-                writer.flush();
+                writer.flush();//刷新
                 String clmsg = reader.readLine();
                 System.out.println(clmsg);
             }
