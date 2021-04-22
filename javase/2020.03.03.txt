@@ -1,0 +1,34 @@
+psvm -快捷键输入main 方法
+sout-快捷键输入system.out.println()
+.java文件-编译生成-.class文件(字节码文件/2进制)--加载到JAVA虚拟机(jvm)然后运行JAVA程序
+    JDK(JRE(JVM))
+冯洛伊曼体系:输入设备,输出设备,控制器,运算器,内外存储器
+注释:/** *
+             *
+              */文件注释 
+块注释/* */   行注释// 
+0表示正数  1表示负数  0+ 1-
+块注释选中区域的快捷键是什么 ctrl shift+/ 
+  int 4个字节  long 8个字节   double8个字节  char2个字节  一个汉字2个字节
+  int的包装类是Integer  char的包装类是Character   其他的6种都是首字母大写
+  **理解数值提升**
+  
+  int和long的混合运算
+  int a = 10;   long b =20;
+  int c = a + b;//编译报错,提示long 转为int会丢失精度
+  int d = int(a + b);//编译通过,将long强转为int
+  long e = a+b;//编译通过
+  
+  **结论: 当 int 和 long 混合运算的时候, int 会提升成 long, 得到的结果仍然是 long 类型, 需要使用 long 类型的变量来
+接收结果. 如果非要用 int 来接收结果, 就需要使用强制类型转换**
+
+**byte和byte的运算**
+byte a = 10 ;
+byte b = 20;
+byte c = a + b;//编译报错,从int转为byte会丢失精度
+byte c = byte(a+ b);//将int强转为byte
+system.out.println( c );
+**结论:byte和byte都是相同类型,但是出现编译错误,原因是a+b进行计算的时候会先被提升为Int类型在进行计算,计算得到的结果是Int类型如果进行赋值byte会丢失精度,所以会报错.**
+**由于计算机cpu在进行计算时会以4个字节在内存中读写数据,所以byte , short之类的都会先提升为int类在进行计算**.
+
+ 

@@ -1,0 +1,12 @@
+break:除了用在while里就只能用在循环里,并表示退出所有循环,程序执行完毕,不执行后面的循环
+continue:用在循环里表   
+system.out.println()换行
+system.out.print()不换行
+system.out.printf("%d0", )
+当时用Scanner输入时
+scanner.nextLine();不能连用
+如果输入一个整数和一个字符串
+顺序应该是
+Scanner scanner = new Scanner(System.in);
+String str = scanner.nextLine();
+int a = scanner.nextInt();//顺序不能乱
